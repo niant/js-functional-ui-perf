@@ -2,7 +2,7 @@
   "name": "vdom-nesting",
   "version": "1.0.0",
   "description": "",
-  "main": "howto-subcomponent-rendering.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "browserify index.js -o build.js -t [ babelify ]",
