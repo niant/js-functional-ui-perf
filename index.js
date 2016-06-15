@@ -11,6 +11,7 @@ const thunk = require('snabbdom/thunk');
 const PubSub = require('pubsub-js');
 
 
+const UPDATE_TIME = 'UPDATE_TIME';
 
 const generateContent = count => {
   let content = [];
@@ -27,7 +28,6 @@ var timeListener = setInterval(() => {
 }, 1000);
 
 
-const UPDATE_SIMPLEITEM = 'UPDATE_SIMPLEITEM';
 
 var App = {};
 
@@ -45,10 +45,6 @@ App.view = (state, update) => {
 };
 
 App.update = (state, action) => {
-  if (action.type === UPDATE_SIMPLEITEM) {
-    return { ...state, simpleItem: SimpleItem.update(state.simpleItem, action.data) };
-  }
-
   if (action.type === UPDATE_TIME) {
     const updatedItems = state.items.map(item => {
       if (item.id === action.id) {
@@ -110,10 +106,6 @@ SimpleItem.update = (state, action) => {
 
 
 
-
-
-const UPDATE_TIME = 'UPDATE_TIME';
-
 var Time = {};
 
 Time.init = () => {
@@ -144,10 +136,8 @@ Time.view = (state, update) => {
 
 Time.update = (state, action) => {
   if (action.type === UPDATE_TIME) {
-    const newState = { ...state, timestamp: action.data.timestamp };
     return { ...state, timestamp: action.data.timestamp };
   }
-  console.log('time update', state, action);
 
   return state;
 };
