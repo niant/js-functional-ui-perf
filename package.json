@@ -1,0 +1,28 @@
+{
+  "name": "vdom-nesting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "howto-subcomponent-rendering.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify index.js -o build.js -t [ babelify ]",
+    "dev": "webpack-dev-server --inline --hot"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dateformat": "^1.0.12",
+    "pubsub-js": "^1.5.3",
+    "snabbdom": "^0.5.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
